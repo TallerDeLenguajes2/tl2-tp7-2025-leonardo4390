@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Data.Sqlite;
 
-public class ProductoRepository : IRepository
+public class ProductoRepository : IRepository<Productos>
 {
     private string cadenaConexion = "Data Source=DB/Tienda.db";
 
@@ -104,6 +104,11 @@ public class ProductoRepository : IRepository
             command.ExecuteNonQuery();
             connection.Close();
         }
+    }
+
+    public void AgregarDetalle(int idPre, int idPro, int cantidad)
+    {
+         throw new NotImplementedException("Este método no se utiliza en ProductoRepository.");
     }
 
 }
