@@ -1,12 +1,13 @@
 using System;
 
-public interface IRepository
+public interface IRepository<T>
 {
-    public List<Productos> GetAll();
+    public List<T> GetAll();
 
-    public Productos GetById(int idProducto);
+    public T GetById(int id);
 
-    public void Create(Productos productos);
-    public void Remove(int idProducto);
-    public void Update(Productos productos);
+    public void Create(T entidad);
+    public void Remove(int id);
+    public void Update(T entidad);
+    public void AgregarDetalle(int idPre, int idPro, int cantidad);
 }
